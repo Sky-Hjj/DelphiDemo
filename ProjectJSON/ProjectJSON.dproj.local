@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2020-09-15 19:56:17.926,=C:\Users\Sky\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020-09-15 20:16:37.529,=C:\Users\Sky\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2020-09-15 20:17:01.087,C:\Users\Sky\Documents\Embarcadero\Studio\Projects\Student.pas=C:\Users\Sky\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2020-09-15 20:17:26.592,G:\DelphiDemo\ProjectJSON\Student.pas=C:\Users\Sky\Documents\Embarcadero\Studio\Projects\Student.pas</Transaction>
+    <Transaction>2020-09-15 20:18:30.610,G:\DelphiDemo\ProjectJSON\UFrom.dfm=C:\Users\Sky\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2020-09-15 20:18:30.610,G:\DelphiDemo\ProjectJSON\UFrom.pas=C:\Users\Sky\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020-09-15 20:20:35.847,G:\DelphiDemo\ProjectJSON\UStudent.pas=G:\DelphiDemo\ProjectJSON\Student.pas</Transaction>
+    <Transaction>2020-09-15 22:01:37.188,G:\DelphiDemo\ProjectJSON\ProjectJSON.dproj=C:\Users\Sky\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

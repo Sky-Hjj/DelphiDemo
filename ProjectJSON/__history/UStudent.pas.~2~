@@ -1,0 +1,14 @@
+unit UStudent;
+
+interface
+
+type
+  FStudent = class
+     private
+     public
+
+  end;
+
+implementation
+
+end.

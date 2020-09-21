@@ -1,0 +1,17 @@
+unit UStudent;
+
+interface
+
+type
+  Student = class
+  private
+    FName = string;
+    FAge = Integer;
+  public
+    property Name: string read FName write FName;
+    property Age: string read FAge write FAge;
+  end;
+
+implementation
+
+end.

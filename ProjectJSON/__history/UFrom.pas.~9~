@@ -1,0 +1,74 @@
+unit UFrom;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls,
+  UStudent, System.JSON.Serializers, System.Generics.Collections;
+
+type
+  TFMain = class(TForm)
+    Button1: TButton;
+    Button2: TButton;
+    Memo1: TMemo;
+    Button3: TButton;
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FMain: TFMain;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFMain.Button1Click(Sender: TObject);
+var
+  stu: student;
+  serializer: TJsonSerializer;
+  stuJson: string;
+begin
+  // 字符串类型JSON数据
+  stuJson := '{"FName":"Sky","FAge":"22"}';
+  // 创建反序列化对象
+  serializer := TJsonSerializer.create();
+  stu := serializer.Deserialize<student>(stuJson);
+  Memo1.Lines.Add(stu.ToString);
+  Memo1.Lines.Add('反序列化:' + stu.Name + ',' + stu.Age.ToString);
+end;
+
+procedure TFMain.Button2Click(Sender: TObject);
+var
+  stu: student;
+  serializer: TJsonSerializer;
+  stuJson: string;
+begin
+  // 创建反序列化对象
+  stu := student.create;
+  stu.Name := 'Hjj';
+  stu.Age := 22;
+  // 创建反序列化对象
+  serializer := TJsonSerializer.create();
+  Memo1.Lines.Add(stu.ToString);
+  Memo1.Lines.Add('序列化:' + serializer.Serialize<student>(stu));
+end;
+
+procedure TFMain.Button3Click(Sender: TObject);
+var
+  stu: student;
+  serializer: TJsonSerializer;
+  stuJson: string;
+  stuList: TList<student>;
+begin
+
+end;
+
+end.

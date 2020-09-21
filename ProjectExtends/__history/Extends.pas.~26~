@@ -1,0 +1,56 @@
+unit Extends;
+
+interface
+
+type
+  // 动物类
+  Animal = class
+  private
+    Age: Integer;
+  public
+    // 构造方法
+    constructor CreateClass(Age: Integer);
+    // 定义属性
+    // property AAge: Integer read Age write Age;
+    procedure getName(); virtual;
+  end;
+
+  // 狗类
+  Dog = class(Animal)
+  public
+    constructor CreateClass();
+    // 重写
+    procedure getName(); override;
+  end;
+
+implementation
+
+{ Animal }
+
+constructor Animal.CreateClass(Age: Integer);
+begin
+  Self.Age := Age;
+  Writeln(Age);
+  Writeln('动物');
+end;
+
+procedure Animal.getName;
+begin
+  Writeln('父类动物');
+end;
+
+{ Dog }
+
+constructor Dog.CreateClass;
+begin
+  Writeln('狗');
+  inherited CreateClass(15);
+end;
+
+procedure Dog.getName;
+begin
+  inherited getName;
+  Writeln('子类狗');
+end;
+
+end.
