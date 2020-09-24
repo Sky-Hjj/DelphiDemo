@@ -1,0 +1,59 @@
+unit untINI;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics, System.IniFiles,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
+
+type
+  TForm2 = class(TForm)
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    edtName: TEdit;
+    rgSex: TRadioGroup;
+    rbMan: TRadioButton;
+    rbWoman: TRadioButton;
+    edtAge: TEdit;
+    GroupBox1: TGroupBox;
+    chk1: TCheckBox;
+    chk2: TCheckBox;
+    cbbAddress: TComboBox;
+    btnSave: TButton;
+    btnRead: TButton;
+    procedure btnSaveClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form2: TForm2;
+  ConfigPath: string;
+implementation
+
+{$R *.dfm}
+
+procedure TForm2.btnSaveClick(Sender: TObject);
+var
+  IniFile: TIniFile;
+  Section: string;
+begin
+
+  // ≈‰÷√Œƒº˛
+  IniFile := TIniFile.Create(ConfigPath);
+  Section := 'basic';
+  IniFile.WriteString(Section, 'editName', edtName.Text);
+  IniFile.WriteString(Section, 'editAge', edtAge.Text);
+  IniFile.WriteBool(Section, 'man', rbMan.Checked);
+  IniFile.WriteBool(Section, 'chk1', chk1.Checked);
+  IniFile.WriteBool(Section, 'chk2', chk2.Checked);
+  IniFile.WriteInteger(Section, 'address', cbbAddress.ItemIndex);
+end;
+
+end.
